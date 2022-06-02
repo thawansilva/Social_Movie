@@ -6,19 +6,27 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import "./index.css";
 import NotFound from "./pages/NotFound";
-import UserAuthContext from "./context/UserAuthContext";
+import { UserAuthContextProvider } from "./context/UserAuthContext";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <UserAuthContext>
+    <UserAuthContextProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Homepage />} />
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Homepage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-    </UserAuthContext>
+    </UserAuthContextProvider>
   </React.StrictMode>
 );
