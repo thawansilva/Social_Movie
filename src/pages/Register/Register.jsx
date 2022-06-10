@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Form } from "../../components/Form/styles";
+import { Form } from "../../styles/Form/styles";
 import { userAuthContext } from "../../context/UserAuthContext";
 import { StyledButton } from "../../styles/Buttons/Buttons";
 import { RegisterContainer, RegisterPage } from "../Login/styles";

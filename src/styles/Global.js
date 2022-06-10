@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle`
 * {
   margin: 0%;
   padding: 0%;
@@ -20,6 +23,8 @@ body {
   height: 100vh;
   width: 100vw;
   letter-spacing: 0.25px;
+  background: ${(props) => props.theme.bg};
+  color: ${(props) => props.theme.syntax};
 }
 @media screen and (min-width: 620px) {
 }
@@ -33,3 +38,5 @@ body {
     font-size: 20px;
   }
 }
+
+`;
